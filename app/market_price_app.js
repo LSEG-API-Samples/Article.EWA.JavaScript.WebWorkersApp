@@ -6,18 +6,17 @@
         itemID = 0,
         wk = new Worker("./app/ws_worker.js");
     const protocol = 'tr_json2';
-    const loginID = 0;
+    const loginID = 1;
 
     wk.addEventListener("message", function (oEvent) {
-        //document.getElementById('display').textContent = oEvent.data;
-        //จะ print 'worker got : Hello'
+
         let response = oEvent.data;
         let command = response.command;
-        console.log('receive data from Web Worker: ' + JSON.stringify(response));
+        //console.log('receive data from Web Worker: ' + JSON.stringify(response));
         if (command === 'connect') {
             processConnectionEvent(response);
-        }else if(command === 'incomingMsg'){
-            processIncomingEvent(response);
+        } else if (command === 'incomingMsg') {
+            processData(response.msg);
         }
 
         console.log(oEvent.data);
@@ -28,15 +27,8 @@
         $('#btnConnect').html(response.msg);
     }
 
-    function processIncomingEvent(response){
-        let incomingdata = JSON.parse(response.msg.toString());
-        for (let index = 0; index < incomingdata.length; index++) {
-            processData(incomingdata[index]);
-        }
-    }
-
-     //Process incoming messages
-     function processData(data) {
+    //Process incoming messages
+    function processData(data) {
         let msgtype = data.Type;
 
         //Clear previous message
@@ -73,20 +65,22 @@
         });
 
         $('#btnLogin').click(function () {
-            let username =  $('#txtUsername').val();
+            let username = $('#txtUsername').val();
             sendLoginrequest(username);
         });
 
         $('#btnSubscribe').click(function () {
-
+            let servicename = $('#txtServiceName').val();
+            let itemname = $('#txtItemName').val();
+            sendItemrequest(servicename,itemname);
         });
 
         $('#btnUnSubscribe').click(function () {
-
+            sendItemCloserequest();
         });
 
         $('#btnLogout').click(function () {
-
+            sendLoginCloserequest();
         });
 
 
@@ -97,7 +91,7 @@
         $('#commandsPre').html(`ws = new WebSocket('${serverurl}', '${protocol}');`);
 
         let connectObj = {
-            'wsinfo': {
+            'commandObj': {
                 'serverurl': serverurl,
                 'protocol': protocol
             },
@@ -120,16 +114,93 @@
                 'Name': ''
             }
         };
-        loginMsg.Key.Name =username;
-        console.log("Sending login request message for " + JSON.stringify(loginMsg));
+        loginMsg.Key.Name = username;
+        //console.log("Sending login request message for " + JSON.stringify(loginMsg));
         $('#commandsPre').html(`Sending Login: ws.send(${JSON.stringify(loginMsg, undefined, 2)});`);
 
         let loginObj = {
-            'loginMsg': loginMsg,
+            'commandObj': loginMsg,
             'command': 'login'
         }
 
         wk.postMessage(loginObj);
+    }
+
+    function sendItemrequest(service, itemname) {
+        if (itemID === 0) {
+            itemID = loginID + 1;
+        } else {
+            itemID += 1;
+        }
+        //create Market Price request message
+        let itemrequestMsg = {
+            'Id': itemID,
+            'Key': {
+                'Name': itemname,
+                'Service': service
+            }
+        };
+
+        let itemrequestObj = {
+            'commandObj': itemrequestMsg,
+            'command': 'requestitem'
+        }
+
+        //console.log("Sending item request message for " + JSON.stringify(itemrequestMsg));
+
+        wk.postMessage(itemrequestObj);
+
+        $('#commandsPre').html(`Sending Item Request: ws.send(${JSON.stringify(itemrequestMsg, undefined, 2)});`);
+        $('#btnUnSubscribe').prop('disabled', false);
+    }
+
+    function sendItemCloserequest() {
+        let closeitemrequestMsg = {
+            'Id': itemID,
+            'Type': 'Close'
+        };
+
+        let closeitemrequestObj = {
+            'commandObj': closeitemrequestMsg,
+            'command': 'closeitem'
+        }
+
+        wk.postMessage(closeitemrequestObj);
+
+        //console.log("Sending close item request message for " + JSON.stringify(closeitemrequestMsg));
+        $('#commandsPre').html(`Sending Item Close Request: ws.send(${JSON.stringify(closeitemrequestMsg, undefined, 2)});`);
+       
+    }
+
+    function sendPong() {
+
+        let pongObj = {
+            'commandObj': { 'Type': 'Pong' },
+            'command': 'pong'
+        }
+        wk.postMessage(pongObj);
+
+        $('#messagesPre').html(`Sending Pong:<br/> ${JSON.stringify({ 'Type': 'Pong' }, undefined, 2)}`); //Ping
+        $('#commandsPre').html(`Sending Client Pong: ws.send(${JSON.stringify({ 'Type': 'Pong' }, undefined, 2)}); </br>`);
+    }
+
+    function sendLoginCloserequest() {
+        let closeloginrequestMsg = {
+            'Domain': 'Login',
+            'Id': loginID,
+            'Type': 'Close'
+        };
+
+        let closeloginrequestObj = {
+            'commandObj': closeloginrequestMsg,
+            'command': 'logout'
+        }
+
+        wk.postMessage(closeloginrequestObj);
+
+        console.log("Sending close login request message for " + JSON.stringify(closeloginrequestMsg));
+        $('#commandsPre').html(`Sending Login Close Request: ws.send(${JSON.stringify(closeloginrequestMsg, undefined, 2)});`);
+        
     }
 
 })($);
