@@ -27,14 +27,22 @@
                 <label for="txtServerurl">Server:</label> &nbsp; <input type="text" id="txtServerurl" class="form-control">&nbsp;&nbsp;
                 <button id="btnConnect" type="button" class="btn btn-sm btn-primary">Connect</button>
             </div>
-            <br/><br/> User: &nbsp; <input type="text" id="txtUsername" value="rdc"> &nbsp;&nbsp;<button id="btnLogin" type="button"
-                class="btn btn-sm btn-primary">Login</button> &nbsp;&nbsp;<button id="btnLogout" type="button" class="btn btn-sm btn-primary">Logout</button>
-            <br/><br/> Service Name: &nbsp; <input type="text" id="txtServiceName" value="ELEKTRON_DD"> &nbsp;&nbsp; RIC
-            Name:&nbsp;
-            <input type="text" id="txtItemName" value=""> &nbsp;&nbsp;
-            <button id="btnSubscribe" type="button" class="btn btn-sm btn-primary">Subscribe</button> &nbsp;&nbsp;
-            <button id="btnUnSubscribe" type="button" class="btn btn-sm btn-primary">Unsubscribe</button>
-
+            <br></br>
+            <div class="form-group">
+                <label for="txtUsername">User:</label> &nbsp; <input type="text" id="txtUsername" class="form-control">&nbsp;&nbsp;
+                <button id="btnLogin" type="button" class="btn btn-sm btn-primary">Login</button> &nbsp;&nbsp;
+                <button id="btnLogout" type="button" class="btn btn-sm btn-primary">Logout</button>
+            </div>
+            </br>
+            <br/>
+            <div class="form-group">
+                <label for="txtServiceName">Service Name:</label> &nbsp; <input type="text" id="txtServiceName" placeholder="ELEKTRON_DD"
+                    class="form-control"> &nbsp;&nbsp;
+                <label for="txtItemName">RIC Name:</label>&nbsp;
+                <input type="text" id="txtItemName" value="" class="form-control"> &nbsp;&nbsp;
+                <button id="btnSubscribe" type="button" class="btn btn-sm btn-primary">Subscribe</button> &nbsp;&nbsp;
+                <button id="btnUnSubscribe" type="button" class="btn btn-sm btn-primary">Unsubscribe</button>
+            </div>
         </form>
 
         <h5>Commands:</h5>
