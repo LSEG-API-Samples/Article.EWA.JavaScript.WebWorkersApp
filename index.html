@@ -4,41 +4,41 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>ADS WebSocket Market Price Streaming Example</title>
     <!-- Bootstrap -->
     <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="./bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-
+    <link href="./css/cover.css" rel="stylesheet">
     <!--<link href="./bootstrap/css/cover.css" rel="stylesheet">-->
     <script src="./libs/jquery-3.2.1.min.js"></script>
 
     <script src="./bootstrap/js/bootstrap.min.js"></script>
 
-    <script src="./app/ws_worker.js"></script>
+    <!--<script src="./app/ws_worker.js"></script>-->
     <script src="./app/market_price_app.js"></script>
 </head>
 
 <body>
     <div class="container-fluid">
-        <h4>Thomson Reuters WebSocket API with Web Worker Example</h4>
+        <h4>Thomson Reuters WebSocket API with Web Workers Example</h4>
         <form class="form-inline">
             <div class="form-group">
                 <label for="txtServerurl">Server:</label> &nbsp; <input type="text" id="txtServerurl" class="form-control">&nbsp;&nbsp;
                 <button id="btnConnect" type="button" class="btn btn-sm btn-primary">Connect</button>
             </div>
-            <br></br>
+           <br/><br/>
             <div class="form-group">
                 <label for="txtUsername">User:</label> &nbsp; <input type="text" id="txtUsername" class="form-control">&nbsp;&nbsp;
                 <button id="btnLogin" type="button" class="btn btn-sm btn-primary">Login</button> &nbsp;&nbsp;
                 <button id="btnLogout" type="button" class="btn btn-sm btn-primary">Logout</button>
             </div>
-            </br>
+            <br/>
             <br/>
             <div class="form-group">
-                <label for="txtServiceName">Service Name:</label> &nbsp; <input type="text" id="txtServiceName" placeholder="ELEKTRON_DD"
+                <label for="txtServiceName">Name:</label> &nbsp; <input type="text" id="txtServiceName" value="ELEKTRON_DD"
                     class="form-control"> &nbsp;&nbsp;
-                <label for="txtItemName">RIC Name:</label>&nbsp;
+                <label for="txtItemName">Name:</label>&nbsp;
                 <input type="text" id="txtItemName" value="" class="form-control"> &nbsp;&nbsp;
                 <button id="btnSubscribe" type="button" class="btn btn-sm btn-primary">Subscribe</button> &nbsp;&nbsp;
                 <button id="btnUnSubscribe" type="button" class="btn btn-sm btn-primary">Unsubscribe</button>
@@ -50,7 +50,7 @@
             <pre id="commandsPre">
         </pre>
         </div>
-        <h5>Messages:</h5>
+        <h5>Incoming Messages:</h5>
         <div id="message">
             <pre id="messagesPre">
         </pre>

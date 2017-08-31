@@ -11,8 +11,6 @@
     self.addEventListener('message', function (e) {
         let data = e.data;
         let command = data.command;
-
-
         if (command === 'connect') {
             connect(data.commandObj);
         } else if(command === 'logout'){
@@ -58,8 +56,6 @@
             onMessage_response.msg = incomingdata[index];
             self.postMessage(onMessage_response);
         }
-
-
     };
 
     function onError(event) {
