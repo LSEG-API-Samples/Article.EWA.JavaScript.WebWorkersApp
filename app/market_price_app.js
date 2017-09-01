@@ -19,7 +19,6 @@
             processData(response.msg);
         }
 
-        //console.log(oEvent.data);
     }, false);
 
     function processConnectionEvent(response) {
@@ -40,15 +39,19 @@
             } else {
                 $('#messagesPre').html('Receive: Data REFRESH_RESP:<br/>'); //Data Refresh_resp
             }
-            $('#messagesPre').html(`${$('#messagesPre').html()} ${JSON.stringify(data, undefined, 2)}`); //IE10 does not support JS Template literals
-            
+            //$('#messagesPre').html(`${$('#messagesPre').html()} ${JSON.stringify(data, undefined, 2)}`); //IE10 does not support JS Template literals
+            $('#messagesPre').html($('#messagesPre').html() + JSON.stringify(data, undefined, 2)); //IE10 does not support JS Template literals
+
         } else if (msgtype === 'Update') {
             //$('#messagesPre').html(JSON.stringify(data, undefined, 2)); //Update_resp
-            $('#messagesPre').html(`Receive: UPDATE_RESP:<br/> ${JSON.stringify(data, undefined, 2)}`); //Status_resp
+            //$('#messagesPre').html(`Receive: UPDATE_RESP:<br/> ${JSON.stringify(data, undefined, 2)}`); //Update_resp
+            $('#messagesPre').html('Receive: UPDATE_RESP:<br/>' + JSON.stringify(data, undefined, 2)); //Update_resp
         } else if (msgtype === 'Status') {
-            $('#messagesPre').html(`Receive: STATUS_RESP:<br/> ${JSON.stringify(data, undefined, 2)}`); //Status_resp
+            //$('#messagesPre').html(`Receive: STATUS_RESP:<br/> ${JSON.stringify(data, undefined, 2)}`); //Status_resp
+            $('#messagesPre').html('Receive: STATUS_RESP:<br/>' + JSON.stringify(data, undefined, 2)); //Status_resp
         } else if (msgtype === 'Ping') {
-            $('#messagesPre').html(`Recieve Ping:</br> ${JSON.stringify(data, undefined, 2)}`); //Server Ping
+            //$('#messagesPre').html(`Recieve Ping:</br> ${JSON.stringify(data, undefined, 2)}`); //Server Ping
+            $('#messagesPre').html('Recieve Ping:</br>' + JSON.stringify(data, undefined, 2)); //Server Ping
             sendPong();
         }
     }
@@ -59,8 +62,8 @@
 
         $('#btnConnect').click(function () {
 
-            serverurl = `ws://${$('#txtServerurl').val()}/WebSocket`;
-            //serverurl = 'ws://' + $('#txtServerurl').val() + '/WebSocket';
+            // serverurl = `ws://${$('#txtServerurl').val()}/WebSocket`;
+            serverurl = 'ws://' + $('#txtServerurl').val() + '/WebSocket';
             //console.log('connecting to ' + serverurl);
             connect(serverurl);
         });
@@ -89,8 +92,8 @@
 
     function connect(serverurl) {
 
-        $('#commandsPre').html(`ws = new WebSocket('${serverurl}', '${protocol}');`);
-
+        //$('#commandsPre').html(`ws = new WebSocket('${serverurl}', '${protocol}');`);
+        $('#commandsPre').html('ws = new WebSocket("' + serverurl + '", "' + protocol + '");');
         let connectObj = {
             'commandObj': {
                 'serverurl': serverurl,
@@ -117,9 +120,9 @@
         };
         loginMsg.Key.Name = username;
         //console.log("Sending login request message for " + JSON.stringify(loginMsg));
-        //$('#commandsPre').html(`Sending Login: ws.send(${JSON.stringify(loginMsg, undefined, 2)});`);
-        $('#commandsPre').html(`Sending Login request message to Web Workers: WebWorkers.post(${JSON.stringify(loginMsg, undefined, 2)});`);
 
+        //$('#commandsPre').html(`Sending Login request message to Web Workers: WebWorkers.post(${JSON.stringify(loginMsg, undefined, 2)});`);
+        $('#commandsPre').html('Sending Login request message to Web Workers: WebWorkers.post(' + JSON.stringify(loginMsg, undefined, 2) + ');');
         let loginObj = {
             'commandObj': loginMsg,
             'command': 'login'
@@ -153,8 +156,8 @@
         wk.postMessage(itemrequestObj);
 
         // $('#commandsPre').html(`Sending Item Request: ws.send(${JSON.stringify(itemrequestMsg, undefined, 2)});`);
-        $('#commandsPre').html(`Sending Item request message to Web Workers: WebWorkers.post(${JSON.stringify(itemrequestMsg, undefined, 2)});`);
-        //$('#btnUnSubscribe').prop('disabled', false);
+        //$('#commandsPre').html(`Sending Item request message to Web Workers: WebWorkers.post(${JSON.stringify(itemrequestMsg, undefined, 2)});`);
+        $('#commandsPre').html('Sending Item request message to Web Workers: WebWorkers.post(' + JSON.stringify(itemrequestMsg, undefined, 2) + ');');
     }
 
     function sendItemCloserequest() {
@@ -171,9 +174,8 @@
         wk.postMessage(closeitemrequestObj);
 
         //console.log("Sending close item request message for " + JSON.stringify(closeitemrequestMsg));
-        //$('#messagesPre').html('Sending Item Close Request: ws.send('+JSON.stringify(closeitemrequestMsg, undefined, 2)+');');
-        $('#commandsPre').html(`Sending Item Close request message to Web Workers: WebWorkers.post(${JSON.stringify(closeitemrequestMsg, undefined, 2)});`);
-
+        //$('#commandsPre').html(`Sending Item Close request message to Web Workers: WebWorkers.post(${JSON.stringify(closeitemrequestMsg, undefined, 2)});`);
+        $('#commandsPre').html('Sending Item Close request message to Web Workers: WebWorkers.post(' + JSON.stringify(closeitemrequestMsg, undefined, 2) + ');');
     }
 
     function sendPong() {
@@ -185,7 +187,8 @@
         wk.postMessage(pongObj);
 
         //$('#messagesPre').html(`Sending Pong:<br/> ${JSON.stringify({ 'Type': 'Pong' }, undefined, 2)}`); //Ping
-        $('#commandsPre').html(`Sending Client Pong: ws.send(${JSON.stringify({ 'Type': 'Pong' }, undefined, 2)});`);
+        //$('#commandsPre').html(`Sending Client Pong: ws.send(${JSON.stringify({ 'Type': 'Pong' }, undefined, 2)});`);
+        $('#commandsPre').html('Sending Client Pong: ws.send('+ JSON.stringify({ 'Type': 'Pong' }, undefined, 2)+');');
     }
 
     function sendLoginCloserequest() {
@@ -203,8 +206,8 @@
         wk.postMessage(closeloginrequestObj);
 
         //console.log("Sending close login request message for " + JSON.stringify(closeloginrequestMsg));
-        $('#commandsPre').html(`Sending Login Close Request: ws.send(${JSON.stringify(closeloginrequestMsg, undefined, 2)});`);
-
+        //$('#commandsPre').html(`Sending Login Close Request: ws.send(${JSON.stringify(closeloginrequestMsg, undefined, 2)});`);
+        $('#commandsPre').html('Sending Login Close Request: ws.send(' + JSON.stringify(closeloginrequestMsg, undefined, 2)+ ');');
     }
 
 })($);
