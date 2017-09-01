@@ -10,16 +10,13 @@
     <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="./bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="./css/cover.css" rel="stylesheet">
-    <!--<link href="./bootstrap/css/cover.css" rel="stylesheet">-->
     <script src="./libs/jquery-3.2.1.min.js"></script>
-
     <script src="./bootstrap/js/bootstrap.min.js"></script>
-
-    <!--<script src="./app/ws_worker.js"></script>-->
     <script src="./app/market_price_app.js"></script>
 </head>
 
 <body>
+    <!-- WebSocket connection UI input form -->
     <div class="container-fluid">
         <h4>Thomson Reuters WebSocket API with Web Workers Example</h4>
         <form class="form-inline">
@@ -27,7 +24,7 @@
                 <label for="txtServerurl">Server:</label> &nbsp; <input type="text" id="txtServerurl" class="form-control">&nbsp;&nbsp;
                 <button id="btnConnect" type="button" class="btn btn-sm btn-primary">Connect</button>
             </div>
-           <br/><br/>
+            <br/><br/>
             <div class="form-group">
                 <label for="txtUsername">User:</label> &nbsp; <input type="text" id="txtUsername" class="form-control">&nbsp;&nbsp;
                 <button id="btnLogin" type="button" class="btn btn-sm btn-primary">Login</button> &nbsp;&nbsp;
@@ -44,12 +41,13 @@
                 <button id="btnUnSubscribe" type="button" class="btn btn-sm btn-primary">Unsubscribe</button>
             </div>
         </form>
-
+        <!-- Display outgoing messages and commands -->
         <h5>Commands:</h5>
         <div id="command">
             <pre id="commandsPre">
         </pre>
         </div>
+        <!-- Display incoming messages -->
         <h5>Incoming Messages:</h5>
         <div id="message">
             <pre id="messagesPre">
