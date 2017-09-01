@@ -1,29 +1,58 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>ADS WebSocket Market Price Streaming Example</title>
+    <!-- Bootstrap -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="./css/cover.css" rel="stylesheet">
     <script src="./libs/jquery-3.2.1.min.js"></script>
-    <script src="./app/ws_worker.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
     <script src="./app/market_price_app.js"></script>
 </head>
 
 <body>
-    <h5>Thomson Reuters WebSocket API Price Example: Market Price Streaming</h5>
-    Server: &nbsp; <input type="text" id="txtServerurl" value="172.20.33.11:17000"> &nbsp;&nbsp;<button id="btnConnect">click to connect</button>
-    <br/><br/> User: &nbsp; <input type="text" id="txtUsername" value="rdc"> &nbsp;&nbsp;<button id="btnLogin">click to Login</button>    &nbsp;&nbsp;<button id="btnLogout">click to Logout</button>
-    <br/><br/> Service Name: &nbsp; <input type="text" id="txtServiceName" value="ELEKTRON_DD"> &nbsp;&nbsp; RIC Name:&nbsp;
-    <input type="text" id="txtItemName" value=""> &nbsp;&nbsp;
-    <button id="btnSubscribe">click to subscribe</button> &nbsp;&nbsp;<button id="btnUnSubscribe">click to unsubscribe</button>
-    <br/><br/><br/> <h6>Commands:</h6>
-    <div id="command">
-        <pre id="commandsPre">
+    <!-- WebSocket connection UI input form -->
+    <div class="container-fluid">
+        <h4>Thomson Reuters WebSocket API with Web Workers Example</h4>
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="txtServerurl">Server:</label> &nbsp; <input type="text" id="txtServerurl" class="form-control">&nbsp;&nbsp;
+                <button id="btnConnect" type="button" class="btn btn-sm btn-primary">Connect</button>
+            </div>
+            <br/><br/>
+            <div class="form-group">
+                <label for="txtUsername">User:</label> &nbsp; <input type="text" id="txtUsername" class="form-control">&nbsp;&nbsp;
+                <button id="btnLogin" type="button" class="btn btn-sm btn-primary">Login</button> &nbsp;&nbsp;
+                <button id="btnLogout" type="button" class="btn btn-sm btn-primary">Logout</button>
+            </div>
+            <br/>
+            <br/>
+            <div class="form-group">
+                <label for="txtServiceName">Name:</label> &nbsp; <input type="text" id="txtServiceName" value="ELEKTRON_DD"
+                    class="form-control"> &nbsp;&nbsp;
+                <label for="txtItemName">Name:</label>&nbsp;
+                <input type="text" id="txtItemName" value="" class="form-control"> &nbsp;&nbsp;
+                <button id="btnSubscribe" type="button" class="btn btn-sm btn-primary">Subscribe</button> &nbsp;&nbsp;
+                <button id="btnUnSubscribe" type="button" class="btn btn-sm btn-primary">Unsubscribe</button>
+            </div>
+        </form>
+        <!-- Display outgoing messages and commands -->
+        <h5>Commands:</h5>
+        <div id="command">
+            <pre id="commandsPre">
         </pre>
-    </div>
-    <h6>Messages:</h6>
-    <div id="message">
-        <pre id="messagesPre">
+        </div>
+        <!-- Display incoming messages -->
+        <h5>Incoming Messages:</h5>
+        <div id="message">
+            <pre id="messagesPre">
         </pre>
+        </div>
     </div>
 </body>
 
