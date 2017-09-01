@@ -52,6 +52,8 @@
             processConnectionEvent(response);
         } else if (command === 'incomingMsg') { //Receive incoming messages from ADS WebSocket
             processData(response.msg);
+        } else if(command === 'disconnect') { //Receive Disconnect sucess from ADS WebSocket
+            $('#btnConnect').html('Connect');
         }
 
     }, false);

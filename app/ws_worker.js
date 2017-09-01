@@ -18,8 +18,8 @@
 
         if (command === 'connect') {
             connect(data.commandObj); //Establish WebSocket connection
-        } else if(command === 'logout'){
-            sendOMMmessage(data.commandObj); 
+        } else if (command === 'logout') {
+            sendOMMmessage(data.commandObj);
             disconnect(); //Terminate WebSocket connection
         } else {
             sendOMMmessage(data.commandObj);
@@ -28,7 +28,7 @@
 
     }, false);
 
- /* -----------------  Application events functions  ----------------- */
+    /* -----------------  Application events functions  ----------------- */
 
     //Establish WebSocket connection
     function connect(commandObj) {
@@ -39,8 +39,14 @@
         ws.onclose = onClose;
     }
 
-    function disconnect(){
+    function disconnect() {
         ws.close();
+
+        var disconnect_response = {
+            'command': 'disconnect',
+            'msg': 'Disconnected'
+        };
+        self.postMessage(disconnect_response);
     }
 
     //Send message to ADS WebSocket
@@ -48,8 +54,8 @@
         ws.send(JSON.stringify(commandObj));
     }
 
- /* -----------------  WS events  ----------------- */
-    
+    /* -----------------  WS events  ----------------- */
+
     //Establish WebSocket connection success
     function onOpen(event) {
         var onOpen_response = {
@@ -63,7 +69,7 @@
         let incomingdata = JSON.parse(event.data.toString());
         //Iterate each JSON message and send it to market_price_app.js
         for (let index = 0; index < incomingdata.length; index++) {
-            
+
             onMessage_response.msg = incomingdata[index];
             self.postMessage(onMessage_response);
         }
