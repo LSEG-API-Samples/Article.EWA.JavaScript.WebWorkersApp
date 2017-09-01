@@ -1,13 +1,16 @@
 (function () {
 
+    //Define WebSocket and protocol variables
     let ws = null;
     const protocol = 'tr_json2';
 
+    //Define based object response to market_price_app.js 
     let onMessage_response = {
         'command': 'incomingMsg',
         'msg': null
     };
 
+    //Receive message from market_price_app.js
     self.addEventListener('message', function (e) {
         let data = e.data;
         let command = data.command;
