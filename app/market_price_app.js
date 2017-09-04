@@ -4,7 +4,7 @@
         username = '',
         ws = null,
         itemID = 0,
-        wk = new Worker("./app/ws_worker.js");
+        wk = new Worker("./app/ws_workers.js");
     const protocol = 'tr_json2';
     const loginID = 1;
 
