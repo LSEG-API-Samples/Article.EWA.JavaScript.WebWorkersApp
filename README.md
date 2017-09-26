@@ -19,7 +19,7 @@ The following libraries are required for this example. They are need to be downl
 The web application contains the following example files and folder:
 1. index.html: The application HTML page
 2. app/market_price_app.js: The application main file
-3. app/ws_worker.js: The application Web Workers file
+3. app/ws_workers.js: The application Web Workers file
 4. css/cover.css: The application CSS file
 5. libs/jquery-3.2.1.min.js: jQuery library file (need to be downloaded separately)
 6. bootstrap/css, bootstarp/fonts and bootstrap/js folders: The folders for Bootstrap CSS and libraries files (need to be downloaded separately)

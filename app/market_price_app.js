@@ -2,7 +2,6 @@
     //Define variables
     var serverurl = '',
         username = '',
-        ws = null,
         itemID = 0,
         wk = new Worker("./app/ws_workers.js");
     const protocol = 'tr_json2';

@@ -2,7 +2,6 @@
 
     //Define WebSocket and protocol variables
     let ws = null;
-    const protocol = 'tr_json2';
 
     //Define based object response to market_price_app.js 
     let onMessage_response = {
