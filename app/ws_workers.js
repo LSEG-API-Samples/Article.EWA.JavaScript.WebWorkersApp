@@ -1,3 +1,12 @@
+//******************************************************************************************/
+// The ws_workers.js is an application Web Workers file. 
+// It handles all communications with ADS WebSocket. 
+
+// Author: Wasin Waeosri
+// Version: 1.0
+// Date: 7 November 2017
+//******************************************************************************************/
+
 (function () {
 
     //Define WebSocket and protocol variables
