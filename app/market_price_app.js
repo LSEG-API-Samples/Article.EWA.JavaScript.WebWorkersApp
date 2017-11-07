@@ -1,3 +1,12 @@
+//******************************************************************************************/
+// The market_price_app.js is a main application file. 
+// It handles all UI interactions. 
+// It sends and receives messages with ws_workers.js file to communicate with ADS WebSocket.
+
+// Author: Wasin Waeosri
+// Version: 1.0
+// Date: 7 November 2017
+//******************************************************************************************/
 (function ($) {
     //Define variables
     var serverurl = '',
@@ -196,7 +205,7 @@
         wk.postMessage(pongObj);
 
         //$('#commandsPre').html(`Sending Client Pong: ws.send(${JSON.stringify({ 'Type': 'Pong' }, undefined, 2)});`);
-        $('#commandsPre').html('Sending Client Pong: ws.send(' + JSON.stringify({ 'Type': 'Pong' }, undefined, 2) + ');');
+        $('#commandsPre').html('Sending Client Pong to Web Workers: WebWorkers.post(' + JSON.stringify({ 'Type': 'Pong' }, undefined, 2) + ');');
     }
 
     //Send Login Close Request message to ADS WebSocket
@@ -215,7 +224,7 @@
         wk.postMessage(closeloginrequestObj);
 
         //$('#commandsPre').html(`Sending Login Close Request: ws.send(${JSON.stringify(closeloginrequestMsg, undefined, 2)});`);
-        $('#commandsPre').html('Sending Login Close Request: ws.send(' + JSON.stringify(closeloginrequestMsg, undefined, 2) + ');');
+        $('#commandsPre').html('Sending Login Close Request to Web Workers: WebWorkers.post(' + JSON.stringify(closeloginrequestMsg, undefined, 2) + ');');
     }
 
 })($);
