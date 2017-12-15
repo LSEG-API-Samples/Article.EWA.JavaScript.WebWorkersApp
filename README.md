@@ -49,7 +49,7 @@ The web application contains the following example files and folder:
 
 ![application display](images/run_server.png "run server")
 
-5. Open web browser (IE11, Chorme and Firefox), then navigate to index.html of the web server at ```http://localhost:300/index.html```
+5. Open web browser (IE11, Chorme and Firefox), then navigate to index.html of the web server at ```http://localhost:3000/index.html```
 
 ![application display](images/application_screen.png "application display")
 
