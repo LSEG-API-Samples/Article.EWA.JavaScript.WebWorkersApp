@@ -1,0 +1,14 @@
+{
+  "name": "elecktron_ws_worker",
+  "version": "1.0.0",
+  "description": "The example project that provides how to implement JavaScript applicatiion with Web Workers for Elektron WebSocket API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wasin Waeosri <wasin.waeosri@thomsonreuters.com> (https://developers.thomsonreuters.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
