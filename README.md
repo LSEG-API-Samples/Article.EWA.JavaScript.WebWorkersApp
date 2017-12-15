@@ -1,7 +1,7 @@
 # Elektron WebSocket API with Web Workers Example 
 ## Overview
 
-[Elektron WebSocket API](https://developers.thomsonreuters.com/elektron/websocket-api-early-access) enables easy integration into a multitude of client technology environments such as scripting and web.  This API runs directly on your TREP infrastructure or the Thomson Reuters platform and presents data in an open (JSON) readable format. The API supports all Thomson Reuters Elektron data models and can be integrated into multiple client technology standards e.g. Python, R, .Net etc.
+[Elektron WebSocket API](https://developers.thomsonreuters.com/elektron/websocket-api) enables easy integration into a multitude of client technology environments such as scripting and web.  This API runs directly on your TREP infrastructure or the Thomson Reuters platform and presents data in an open (JSON) readable format. The API supports all Thomson Reuters Elektron data models and can be integrated into multiple client technology standards e.g. Python, R, .Net etc.
 
 The web browsers JavaScript runtime is a single-threaded environment by default. However, the HTML standard lets developers implement multi threads JavaScript application in web browser by introducing the [Web Workers](https://html.spec.whatwg.org/multipage/workers.html) feature that lets web browsers run JavaScripts in a main thread and a background thread (workers thread).
 
@@ -34,7 +34,7 @@ The web application contains the following example files and folder:
 
 ## References
 For further details, please check out the following resources:
-* [Thomson Reuters Elektron WebSocket API page](https://developers.thomsonreuters.com/elektron/websocket-api-early-access) on the [Thomson Reuters Developer Community](https://developers.thomsonreuters.com/) web site.
+* [Thomson Reuters Elektron WebSocket API page](https://developers.thomsonreuters.com/elektron/websocket-api) on the [Thomson Reuters Developer Community](https://developers.thomsonreuters.com/) web site.
 * [Mozilla Developer Network: Web Workers API page](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API).
 * [Google HTML5 Rocks: The Basics of Web Workers page](https://www.html5rocks.com/en/tutorials/workers/basics/)
 

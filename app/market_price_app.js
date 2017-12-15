@@ -123,7 +123,7 @@
     function sendLoginrequest(username) {
         //Create Login request message
         let loginMsg = {
-            'Id': loginID,
+            'ID': loginID,
             'Domain': 'Login',
             'Key': {
                 'Elements': {
@@ -155,7 +155,7 @@
         }
         //create Market Price request message
         let itemrequestMsg = {
-            'Id': itemID,
+            'ID': itemID,
             'Key': {
                 'Name': itemname,
                 'Service': service
@@ -177,7 +177,7 @@
     function sendItemCloserequest() {
 
         let closeitemrequestMsg = {
-            'Id': itemID,
+            'ID': itemID,
             'Type': 'Close'
         };
 
@@ -212,7 +212,7 @@
     function sendLoginCloserequest() {
         let closeloginrequestMsg = {
             'Domain': 'Login',
-            'Id': loginID,
+            'ID': loginID,
             'Type': 'Close'
         };
 
