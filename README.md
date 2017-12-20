@@ -45,11 +45,11 @@ The web application contains the following example files and folder:
 ![npm command display](images/npm_install.png "npm command display")
 
 3. If the machine is behind a proxy server, you need to configure Node.js uses proxy instead of a direct HTTP connection via the following command in command prompt: ```set https_proxy=http://<proxy.server>:<port>```
-4. Run ```$> node server.js``` in the command prompt to start the web server at HTTP port 3000
+4. Run ```$> node server.js``` in the command prompt to start the web server at HTTP port 8080
 
 ![application display](images/run_server.png "run server")
 
-5. Open web browser (IE11, Chorme and Firefox), then navigate to index.html of the web server at ```http://localhost:3000/index.html```
+5. Open web browser (IE11, Chorme and Firefox), then navigate to index.html of the web server at ```http://localhost:8080/index.html```
 
 ![application display](images/application_screen.png "application display")
 
