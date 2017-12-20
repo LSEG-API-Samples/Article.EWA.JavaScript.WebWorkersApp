@@ -30,22 +30,22 @@
         <h4>Thomson Reuters WebSocket API with Web Workers Example</h4>
         <form class="form-inline">
             <div class="form-group">
-                <label for="txtServerurl">Server:</label> &nbsp; <input type="text" id="txtServerurl" class="form-control">&nbsp;&nbsp;
+                <label for="txtServerurl">Server:</label> &nbsp; <input type="text" id="txtServerurl" placeholder="ADS IP:WebSocket Port" class="form-control">&nbsp;&nbsp;
                 <button id="btnConnect" type="button" class="btn btn-sm btn-primary">Connect</button>
             </div>
             <br/><br/>
             <div class="form-group">
-                <label for="txtUsername">User:</label> &nbsp; <input type="text" id="txtUsername" class="form-control">&nbsp;&nbsp;
+                <label for="txtUsername" placeholder="userk">User:</label> &nbsp; <input type="text" id="txtUsername" class="form-control">&nbsp;&nbsp;
                 <button id="btnLogin" type="button" class="btn btn-sm btn-primary">Login</button> &nbsp;&nbsp;
                 <button id="btnLogout" type="button" class="btn btn-sm btn-primary">Logout</button>
             </div>
             <br/>
             <br/>
             <div class="form-group">
-                <label for="txtServiceName">Name:</label> &nbsp; <input type="text" id="txtServiceName" value="ELEKTRON_DD"
-                    class="form-control"> &nbsp;&nbsp;
-                <label for="txtItemName">Name:</label>&nbsp;
-                <input type="text" id="txtItemName" value="" class="form-control"> &nbsp;&nbsp;
+                <!--<label for="txtServiceName">Service Name:</label> &nbsp; <input type="text" id="txtServiceName" class="form-control"> &nbsp;&nbsp;-->
+                <label for="txtItemName">Item Name:</label>&nbsp;
+                <input type="text" id="txtItemName" value="" placeholder="TRI.N" class="form-control"> &nbsp;&nbsp;
+                <label for="txtServiceName">Service Name:</label> &nbsp; <input type="text" id="txtServiceName" class="form-control" placeholder="[Optional]">  &nbsp;&nbsp;
                 <button id="btnSubscribe" type="button" class="btn btn-sm btn-primary">Subscribe</button> &nbsp;&nbsp;
                 <button id="btnUnSubscribe" type="button" class="btn btn-sm btn-primary">Unsubscribe</button>
             </div>

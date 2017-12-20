@@ -94,6 +94,8 @@
 
             //$('#messagesPre').html(`Receive: STATUS_RESP:<br/> ${JSON.stringify(data, undefined, 2)}`); //Status_resp
             $('#messagesPre').html('Receive: STATUS_RESP:<br/>' + JSON.stringify(data, undefined, 2)); //Display Status_resp
+        } else if (msgtype === 'Error'){//If incoming message is ERROR_RESP
+            $('#messagesPre').html('Receive: ERROR_RESP:<br/>' + JSON.stringify(data, undefined, 2)); //Display Status_resp
         } else if (msgtype === 'Ping') { //If incoming message is PING (server ping)
 
             //$('#messagesPre').html(`Recieve Ping:</br> ${JSON.stringify(data, undefined, 2)}`); //Server Ping
@@ -153,14 +155,19 @@
         } else {
             itemID += 1;
         }
-        //create Market Price request message
+
+    
+        //create Market Price request message, if user does not set service name, let the ADS use default service
         let itemrequestMsg = {
             'ID': itemID,
             'Key': {
-                'Name': itemname,
-                'Service': service
+                'Name': itemname
             }
         };
+        //if user set service name, request interested service name 
+        if(service !==''){
+            itemrequestMsg.Key.Service = service
+        } 
 
         let itemrequestObj = {
             'commandObj': itemrequestMsg,
