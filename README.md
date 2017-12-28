@@ -5,7 +5,7 @@
 
 The web browsers JavaScript runtime is a single-threaded environment by default. However, the HTML standard lets developers implement multi threads JavaScript application in web browser by introducing the [Web Workers](https://html.spec.whatwg.org/multipage/workers.html) feature that lets web browsers run JavaScripts in a main thread and a background thread (workers thread).
 
-This example shows how to implement the Elektron WebSocket API with JavaScript web application with Web Workers. It lets the Web Workers thread handles a connection logic with ADS WebSocket while the main thread handles the UI interaction events and displaying data.
+This example shows how to implement the Elektron WebSocket API with JavaScript web application with Web Workers. It allows the Web Workers thread to handle the connection logic with ADS WebSocket server while the main thread handles the UI interaction events and displaying data.
 
 There are two types of the Web Workers, [Dedicated Workers](https://html.spec.whatwg.org/multipage/workers.html#dedicated-workers-and-the-worker-interface) and [Shared Workers](https://html.spec.whatwg.org/multipage/workers.html#sharedworker). This example covers only how to implement the Elektron WebSocket API with JavaScript web browser application with Dedicated Workers.
 
@@ -16,13 +16,13 @@ The example supports Chrome, Firefox and IE11 (based on the WebSocket and Web Wo
 
 ## Prerequisite
 This example requires the following dependencies softwares.
-1. [Node.js](https://nodejs.org/en/) - version 6.10 or higher.
-2. [npm](https://www.npmjs.com/) package manager (included in Node.js)
-3. [Express.js](https://expressjs.com/) framework
+1. [Node.js](https://nodejs.org/en/) runtime - version 8.9.3 or higher.
+2. [npm](https://www.npmjs.com/) package manager (included with Node.js runtime)
+3. [Express.js](https://expressjs.com/) framework (will be installed via ```npm install``` command)
 
 This example also uses the following 3rd party libraries for UI presentation.
-1. [jQuery 3.2.1](https://jquery.com/) 
-2. [Bootstrap 3.3.7](https://getbootstrap.com/docs/3.3/)
+1. [jQuery 3.2.1](https://jquery.com/) JavaScript library
+2. [Bootstrap 3.3.7](https://getbootstrap.com/docs/3.3/) CSS library
 
 jQuery,Bootstrap and Express.js are distributed under the [MIT license](https://opensource.org/licenses/MIT). Please see more detail in the LICENSE.md file. 
 
@@ -35,7 +35,7 @@ The web application contains the following example files and folder:
 5. libs/jquery-3.2.1.min.js: jQuery library file
 6. bootstrap/css, bootstarp/fonts and bootstrap/js folders: The folders for Bootstrap CSS and libraries files
 7. node_modules folder: Folder for Node.js and Express.js modules for web server running
-8. server.js: A web server application
+8. server.js: A simple web server application
 9. package.json: The Project npm dependencies file. 
 
 ## How to run this example
@@ -45,11 +45,11 @@ The web application contains the following example files and folder:
 ![npm command display](images/npm_install.png "npm command display")
 
 3. If the machine is behind a proxy server, you need to configure Node.js uses proxy instead of a direct HTTP connection via the following command in command prompt: ```set https_proxy=http://<proxy.server>:<port>```
-4. Run ```$> node server.js``` in the command prompt to start the web server at HTTP port 3000
+4. Run ```$> node server.js``` in the command prompt to start the web server at HTTP port 8080
 
 ![application display](images/run_server.png "run server")
 
-5. Open web browser (IE11, Chorme and Firefox), then navigate to index.html of the web server at ```http://localhost:3000/index.html```
+5. Open web browser (IE11, Chorme and Firefox), then navigate to index.html of the web server at ```http://localhost:8080/index.html```
 
 ![application display](images/application_screen.png "application display")
 
@@ -57,6 +57,7 @@ The web application contains the following example files and folder:
 ## References
 For further details, please check out the following resources:
 * [Thomson Reuters Elektron WebSocket API page](https://developers.thomsonreuters.com/websocket-api) on the [Thomson Reuters Developer Community](https://developers.thomsonreuters.com/) web site.
+* [Developer Webinar Recording: Introduction to Electron Websocket API](https://www.youtube.com/watch?v=CDKWMsIQfaw)
 * [Mozilla Developer Network: Web Workers API page](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API).
 * [Google HTML5 Rocks: The Basics of Web Workers page](https://www.html5rocks.com/en/tutorials/workers/basics/)
 
