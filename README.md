@@ -16,13 +16,13 @@ The example supports Chrome, Firefox and IE11 (based on the WebSocket and Web Wo
 
 ## Prerequisite
 This example requires the following dependencies softwares.
-1. [Node.js](https://nodejs.org/en/) - version 6.10 or higher.
-2. [npm](https://www.npmjs.com/) package manager (included in Node.js)
+1. [Node.js](https://nodejs.org/en/) runtime - version 8.9.3 or higher.
+2. [npm](https://www.npmjs.com/) package manager (included with Node.js runtime)
 3. [Express.js](https://expressjs.com/) framework (will be installed via ```npm install``` command)
 
 This example also uses the following 3rd party libraries for UI presentation.
-1. [jQuery 3.2.1](https://jquery.com/) 
-2. [Bootstrap 3.3.7](https://getbootstrap.com/docs/3.3/)
+1. [jQuery 3.2.1](https://jquery.com/) JavaScript library
+2. [Bootstrap 3.3.7](https://getbootstrap.com/docs/3.3/) CSS library
 
 jQuery,Bootstrap and Express.js are distributed under the [MIT license](https://opensource.org/licenses/MIT). Please see more detail in the LICENSE.md file. 
 
