@@ -9,7 +9,7 @@ This example shows how to implement the Refinitiv Real-time WebSocket API with J
 
 There are two types of the Web Workers, [Dedicated Workers](https://html.spec.whatwg.org/multipage/workers.html#dedicated-workers-and-the-worker-interface) and [Shared Workers](https://html.spec.whatwg.org/multipage/workers.html#sharedworker). This example covers only how to implement the Refinitiv Real-time WebSocket API with JavaScript web browser application with Dedicated Workers.
 
-*Note: The initial release of this API is for deployed ADS customers only (i.e. to use it you will need an installed version of TREP 3.2.1 and above). 
+*Note: The initial release of this API is for deployed ADS customers only (i.e. to use it you will need an installed version of ADS 3.2.1 and above). 
 
 ## Supported Web Browsers
 The example supports Chrome, Firefox and IE11 (based on the WebSocket and Web Workers browser supported platform).
