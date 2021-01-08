@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>ADS WebSocket Market Price Streaming Example</title>
+        <title>WebSocket API Market Price Streaming Example</title>
         <!-- Bootstrap  Latest compiled and minified CSS -->
         <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
         <!-- Bootstrap  Optional theme -->
@@ -27,10 +27,10 @@
 <body>
     <!-- WebSocket connection UI input form -->
     <div class="container-fluid">
-        <h4>Thomson Reuters WebSocket API with Web Workers Example</h4>
+        <h4>WebSocket API with Web Workers Example</h4>
         <form class="form-inline">
             <div class="form-group">
-                <label for="txtServerurl">Server:</label> &nbsp; <input type="text" id="txtServerurl" placeholder="ADS IP:WebSocket Port" class="form-control">&nbsp;&nbsp;
+                <label for="txtServerurl">Server:</label> &nbsp; <input type="text" id="txtServerurl" placeholder="Server IP:WebSocket Port" class="form-control">&nbsp;&nbsp;
                 <button id="btnConnect" type="button" class="btn btn-sm btn-primary">Connect</button>
             </div>
             <br/><br/>
@@ -44,7 +44,7 @@
             <div class="form-group">
                 <!--<label for="txtServiceName">Service Name:</label> &nbsp; <input type="text" id="txtServiceName" class="form-control"> &nbsp;&nbsp;-->
                 <label for="txtItemName">Item Name:</label>&nbsp;
-                <input type="text" id="txtItemName" value="" placeholder="TRI.N" class="form-control"> &nbsp;&nbsp;
+                <input type="text" id="txtItemName" value="" placeholder="IBM.N" class="form-control"> &nbsp;&nbsp;
                 <label for="txtServiceName">Service Name:</label> &nbsp; <input type="text" id="txtServiceName" class="form-control" placeholder="[Optional]">  &nbsp;&nbsp;
                 <button id="btnSubscribe" type="button" class="btn btn-sm btn-primary">Subscribe</button> &nbsp;&nbsp;
                 <button id="btnUnSubscribe" type="button" class="btn btn-sm btn-primary">Unsubscribe</button>

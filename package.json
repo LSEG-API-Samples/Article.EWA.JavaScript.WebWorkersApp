@@ -1,14 +1,18 @@
 {
-  "name": "elecktron_ws_worker",
+  "name": "refinitiv_ws_worker",
   "version": "1.0.0",
-  "description": "The example project that provides how to implement JavaScript applicatiion with Web Workers for Elektron WebSocket API",
+  "description": "The example project that provides how to implement JavaScript application with Web Workers for Refinitiv Real-time WebSocket API",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Wasin Waeosri <wasin.waeosri@thomsonreuters.com> (https://developers.thomsonreuters.com/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Refinitiv-API-Samples/Article.EWA.JavaScript.WebWorkersApp"
+  },
+  "author": "Wasin Waeosri <wasin.waeosri@refinitiv.com> (https://developers.refinitiv.com/)",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.17.1"
   }
 }

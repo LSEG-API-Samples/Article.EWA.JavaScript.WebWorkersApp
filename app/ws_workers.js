@@ -1,6 +1,14 @@
+//|-----------------------------------------------------------------------------
+//|            This source code is provided under the Apache 2.0 license      --
+//|  and is provided AS IS with no warranty or guarantee of fit for purpose.  --
+//|                See the project's LICENSE.md for details.                  --
+//|           Copyright Refinitiv 2017.       All rights reserved.            --
+//|-----------------------------------------------------------------------------
+
+
 //******************************************************************************************/
 // The ws_workers.js is an application Web Workers file. 
-// It handles all communications with ADS WebSocket. 
+// It handles all communications with Refinitiv Real-Time Advanced Distribution Server WebSocket. 
 
 // Author: Wasin Waeosri
 // Version: 1.0
