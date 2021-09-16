@@ -129,7 +129,7 @@
         wk.postMessage(connectObj);
     }
 
-    //Send a Login Request message to ADS WebSocket
+    //Send a Login Request message to Real-Time Advanced Distribution Server WebSocket
     function sendLoginrequest(username) {
         //Create Login request message
         let loginMsg = {
@@ -165,7 +165,7 @@
         }
 
     
-        //create Market Price request message, if user does not set service name, let the ADS use default service
+        //create Market Price request message, if user does not set service name, let the Real-Time Advanced Distribution Server use default service
         let itemrequestMsg = {
             'ID': itemID,
             'Key': {
