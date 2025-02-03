@@ -13,6 +13,6 @@
   "author": "Wasin Waeosri <wasin.waeosri@lseg.com> (https://developers.lseg.com/)",
   "license": "Apache-2.0",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.21.2"
   }
 }
