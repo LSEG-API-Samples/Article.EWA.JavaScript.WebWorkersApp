@@ -1,21 +1,20 @@
-# Refinitiv Real-time WebSocket API with Web Workers Example 
+# Real-time WebSocket API with Web Workers Example 
 
-- Last update: Sep 2021
+- Last update: Feb 2025
 - Environment: Any 
 - Compiler: JavaScript
 - Prerequisite: Refinitiv Real-Time Advanced Data Hub and Refinitiv Real-Time Advanced Distribution servers version 3.2.1 and above
 
 ## Overview
 
-[Websocket API for Pricing Streaming and Real-Time Service](https://developers.refinitiv.com/en/api-catalog/refinitiv-real-time-opnsrc/refinitiv-websocket-api) aka Websocket API application enables easy integration into a multitude of client technology environments such as scripting and web.  This API runs directly on your Refinitiv Real-Time infrastructure and presents data in an open (JSON) readable format. The API supports all Refinitiv Real-Time data models and can be integrated into multiple client technology standards e.g. Python, R, .Net, etc.
+[Websocket API for Pricing Streaming and Real-Time Service](https://developers.lseg.com/en/api-catalog/real-time-opnsrc/websocket-api) aka Websocket API application enables easy integration into a multitude of client technology environments such as scripting and web.  This API runs directly on your Refinitiv Real-Time infrastructure and presents data in an open (JSON) readable format. The API supports all Refinitiv Real-Time data models and can be integrated into multiple client technology standards e.g. Python, R, .Net, etc.
 
 The web browser's JavaScript runtime is a single-threaded environment by default. However, the HTML standard lets developers implement multi-threads JavaScript application in the web browser by introducing the [Web Workers](https://html.spec.whatwg.org/multipage/workers.html) feature that lets web browsers run JavaScripts in the main thread and a background thread (workers thread).
 
-This example shows how to implement the Refinitiv Real-time WebSocket API with JavaScript web application with Web Workers. It allows the Web Workers thread to handle the connection logic with eal-Time Advanced Distribution server while the main thread handles the UI interaction events and displaying data.
+This example shows how to implement the Real-time WebSocket API with JavaScript web application with Web Workers. It allows the Web Workers thread to handle the connection logic with eal-Time Advanced Distribution server while the main thread handles the UI interaction events and displaying data.
 
-There are two types of Web Workers, [Dedicated Workers](https://html.spec.whatwg.org/multipage/workers.html#dedicated-workers-and-the-worker-interface) and [Shared Workers](https://html.spec.whatwg.org/multipage/workers.html#sharedworker). This example covers only how to implement the Refinitiv Real-time WebSocket API with JavaScript web browser application with Dedicated Workers.
+There are two types of Web Workers, [Dedicated Workers](https://html.spec.whatwg.org/multipage/workers.html#dedicated-workers-and-the-worker-interface) and [Shared Workers](https://html.spec.whatwg.org/multipage/workers.html#sharedworker). This example covers only how to implement the Real-time WebSocket API with JavaScript web browser application with Dedicated Workers.
 
-*Note: The initial release of this API is for deployed Refinitiv Real-Time Advanced Distribution Server customers only (i.e. to use it you will need an installed version of Refinitiv Real-Time Advanced Distribution Server 3.2.1 and above). 
 
 ## Supported Web Browsers
 The example supports Chrome/Microsoft Edge (Chrome-based version), Firefox, and IE11 (based on the WebSocket and Web Workers browser supported platform).
@@ -62,12 +61,12 @@ The web application contains the following example files and folder:
 ## References
 
 For further details, please check out the following resources:
-* [Refinitiv Real-Time & Distribution Family page](https://developers.refinitiv.com/en/use-cases-catalog/refinitiv-real-time) on the [Refinitiv Developer Community](https://developers.refinitiv.com/) web site.
-* [WebSocket API page](https://developers.refinitiv.com/en/api-catalog/refinitiv-real-time-opnsrc/refinitiv-websocket-api).
+* [LSEG Real-Time products page](https://developers.lseg.com/en/use-cases-catalog/real-time) on the [LSEG Developer Community](https://developers.lseg.com/) web site.
+* [WebSocket API page](https://developers.lseg.com/en/api-catalog/real-time-opnsrc/websocket-api).
 * [Developer Webinar Recording: Introduction to Electron Websocket API](https://www.youtube.com/watch?v=CDKWMsIQfaw)
 * [Mozilla Developer Network: Web Workers API page](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API).
 * [Google HTML5 Rocks: The Basics of Web Workers page](https://www.html5rocks.com/en/tutorials/workers/basics/)
 * [Mozilla Developer Network: WebSocket API page](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
 
-For any questions related to this article or the WebSocket API page, please use the Developer Community [Q&A Forum](https://community.developers.refinitiv.com/spaces/152/websocket-api.html).
+For any questions related to this article or the WebSocket API page, please use the Developer Community [Q&A Forum](https://community.developers.refinitiv.com/).
 

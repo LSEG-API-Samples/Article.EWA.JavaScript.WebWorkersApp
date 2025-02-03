@@ -2,14 +2,14 @@
 //|            This source code is provided under the Apache 2.0 license      --
 //|  and is provided AS IS with no warranty or guarantee of fit for purpose.  --
 //|                See the project's LICENSE.md for details.                  --
-//|           Copyright Refinitiv 2017.       All rights reserved.            --
+//|           Copyright LSEG 2025.            All rights reserved.            --
 //|-----------------------------------------------------------------------------
 
 
 //******************************************************************************************/
 // The market_price_app.js is a main application file. 
 // It handles all UI interactions. 
-// It sends and receives messages with ws_workers.js file to communicate with Refinitiv Real-Time Advanced Distribution Server  WebSocket.
+// It sends and receives messages with ws_workers.js file to communicate with Real-Time Advanced Distribution Server  WebSocket.
 
 // Author: Wasin Waeosri
 // Version: 1.0

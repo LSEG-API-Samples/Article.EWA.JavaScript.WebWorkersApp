@@ -1,17 +1,17 @@
 {
-  "name": "refinitiv_ws_worker",
+  "name": "realtime_ws_worker",
   "version": "1.0.0",
-  "description": "The example project that provides how to implement JavaScript application with Web Workers for Refinitiv Real-time WebSocket API",
+  "description": "The example project that provides how to implement JavaScript application with Web Workers for Real-time WebSocket API",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Refinitiv-API-Samples/Article.EWA.JavaScript.WebWorkersApp"
+    "url": "https://github.com/LSEG-API-Samples/Article.EWA.JavaScript.WebWorkersApp"
   },
-  "author": "Wasin Waeosri <wasin.waeosri@refinitiv.com> (https://developers.refinitiv.com/)",
-  "license": "MIT",
+  "author": "Wasin Waeosri <wasin.waeosri@lseg.com> (https://developers.lseg.com/)",
+  "license": "Apache-2.0",
   "dependencies": {
     "express": "^4.17.1"
   }
