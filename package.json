@@ -13,6 +13,6 @@
   "author": "Wasin Waeosri <wasin.waeosri@refinitiv.com> (https://developers.refinitiv.com/)",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.21.2"
   }
 }
