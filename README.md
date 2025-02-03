@@ -7,7 +7,7 @@
 
 ## Overview
 
-[Websocket API for Pricing Streaming and Real-Time Service](https://developers.lseg.com/en/api-catalog/real-time-opnsrc/websocket-api) aka Websocket API application enables easy integration into a multitude of client technology environments such as scripting and web.  This API runs directly on your Refinitiv Real-Time infrastructure and presents data in an open (JSON) readable format. The API supports all Refinitiv Real-Time data models and can be integrated into multiple client technology standards e.g. Python, R, .Net, etc.
+[Websocket API for Pricing Streaming and Real-Time Service](https://developers.lseg.com/en/api-catalog/real-time-opnsrc/websocket-api) aka Websocket API application enables easy integration into a multitude of client technology environments such as scripting and web.  This API runs directly on your Real-Time infrastructure and presents data in an open (JSON) readable format. The API supports all  Real-Time data models and can be integrated into multiple client technology standards e.g. Python, R, .Net, etc.
 
 The web browser's JavaScript runtime is a single-threaded environment by default. However, the HTML standard lets developers implement multi-threads JavaScript application in the web browser by introducing the [Web Workers](https://html.spec.whatwg.org/multipage/workers.html) feature that lets web browsers run JavaScripts in the main thread and a background thread (workers thread).
 
