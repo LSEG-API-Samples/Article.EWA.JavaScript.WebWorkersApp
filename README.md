@@ -3,7 +3,7 @@
 - Last update: Feb 2025
 - Environment: Any 
 - Compiler: JavaScript
-- Prerequisite: Refinitiv Real-Time Advanced Data Hub and Refinitiv Real-Time Advanced Distribution servers version 3.2.1 and above
+- Prerequisite: Real-Time Advanced Distribution servers version 3.2.1 and above
 
 ## Overview
 
